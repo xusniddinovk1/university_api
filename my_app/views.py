@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import University, Faculty, Chair, Group, Student
+from .serializers import *
 
-# Create your views here.
+
+class UniversityViewSet(viewsets.ModelViewSet):
+    queryset = University.objects.all()

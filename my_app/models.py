@@ -2,6 +2,7 @@ from django.db import models
 
 
 class University(models.Model):
+    objects = None
     name = models.CharField(max_length=255, null=False, blank=False)
 
     def __str__(self):
@@ -9,6 +10,7 @@ class University(models.Model):
 
 
 class Faculty(models.Model):
+    objects = None
     name = models.CharField(max_length=200, null=False, blank=False)
     university = models.ManyToManyField(University)
 
@@ -17,6 +19,7 @@ class Faculty(models.Model):
 
 
 class Chair(models.Model):
+    objects = None
     name = models.CharField(max_length=200, null=False, blank=False)
     faculty = models.ManyToManyField(Faculty)
 
@@ -25,6 +28,7 @@ class Chair(models.Model):
 
 
 class Group(models.Model):
+    objects = None
     name = models.CharField(max_length=200, null=False, blank=False)
     chair = models.ForeignKey(Chair, null=True, on_delete=models.SET_NULL)
 
@@ -33,6 +37,7 @@ class Group(models.Model):
 
 
 class Student(models.Model):
+    objects = None
     first_name = models.CharField(max_length=50, null=False, blank=False)
     last_name = models.CharField(max_length=50, null=False, blank=False)
     group = models.ForeignKey(Group, null=True, on_delete=models.SET_NULL)
