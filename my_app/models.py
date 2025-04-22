@@ -8,7 +8,6 @@ class University(models.Model):
         return self.name
 
 
-
 class Faculty(models.Model):
     name = models.CharField(max_length=200, null=False, blank=False)
     university = models.ManyToManyField(University)
