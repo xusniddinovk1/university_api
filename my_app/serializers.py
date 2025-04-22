@@ -8,3 +8,9 @@ class UniversitySerializers(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
+class FacultySerializers(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Faculty
+        fields = '__all__'
+
+
