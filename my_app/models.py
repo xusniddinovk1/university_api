@@ -12,7 +12,7 @@ class University(models.Model):
 class Faculty(models.Model):
     objects = None
     name = models.CharField(max_length=200, null=False, blank=False)
-    university = models.ManyToManyField(University)
+    university = models.ForeignKey(University, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.name
@@ -21,7 +21,7 @@ class Faculty(models.Model):
 class Chair(models.Model):
     objects = None
     name = models.CharField(max_length=200, null=False, blank=False)
-    faculty = models.ManyToManyField(Faculty)
+    faculty = models.ForeignKey(Faculty, null=True, on_delete=models.SET_NULL)
 
     def __str__(self):
         return self.name
