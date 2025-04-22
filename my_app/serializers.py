@@ -14,3 +14,19 @@ class FacultySerializers(serializers.HyperlinkedModelSerializer):
         fields = '__all__'
 
 
+class ChairSerializers(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Chair
+        fields = '__all__'
+
+
+class GroupSerializers(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Group
+        fields = '__all__'
+
+
+class StudentSerializers(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Student
+        fields = '__all__'
